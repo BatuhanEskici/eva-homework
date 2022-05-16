@@ -35,16 +35,14 @@ export default {
         };
     },
     created() {
-        this.login();
-
-        setTimeout(() => {
+        this.login(() => {
             this.setAxiosConfig();
             this.initFirstChart();
             this.initSecondChart(1, 2022);
-        }, 2000);
+        });
     },
     methods: {
-        login() {
+        login(callback) {
             const user_data = {
                 email: "homework@eva.guru",
                 password: "Homeworkeva1**"
@@ -53,6 +51,7 @@ export default {
             axios.post(`${this.axios_options.base_url}/user/auth`, user_data)
                 .then(response => {
                     this.updateToken(response.data.Data.token);
+                    callback && callback();
                 });
         },
         updateToken(new_token) {
@@ -89,7 +88,7 @@ export default {
             this.secondchartdata.isloaded = false;
             this.initSecondChart(splitted_date[1], splitted_date[0]);
         }
-    },  
+    },
     computed: {
         ...mapGetters(["token"])
     },
