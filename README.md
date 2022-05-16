@@ -1,4 +1,6 @@
 # eva-homework
+Cuma günü vue bootcamp videoları izlemeye başladım, React'den konseptlere aşina olduğum için biraz hızlı geçtim, case'i 15 Mayıs Pazar gecesinde yaptım
+yazarken single responsibility gibi şeylere fazla dikkat edemedim ya da axios'u instance olarak da oluşturabilirdim fakat yoğunluk sebebiyle vaktim yetmedi.
 
 ## Project setup
 ```
